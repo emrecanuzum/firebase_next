@@ -22,6 +22,14 @@
       "@/*": ["./*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    ".next/types/**/*.ts",
+    "app/src/components/SidebarTab.jsx",
+    "app/src/components/Chat.jsx",
+    "app/src/hooks/useRoom.js"
+  ],
   "exclude": ["node_modules"]
 }
