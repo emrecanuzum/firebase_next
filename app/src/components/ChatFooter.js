@@ -19,7 +19,7 @@ export default function ChatFooter({
     </>
   );
   return (
-    <div className="absolute w-full bottom-4 ">
+    <div className="w-full bottom-4 ">
       <form className="px-4">
         <input
           className="w-[77%] h-12 p-2 bg-neutral-50 outline-black border-2 rounded-md"

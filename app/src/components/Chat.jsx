@@ -1,5 +1,6 @@
 import React from "react";
 import { useRouter } from "next/navigation";
+import { useEffect, useRef } from "react";
 import { useSearchParams } from "next/navigation";
 import ChatFooter from "./ChatFooter";
 import ChatMessages from "./ChatMessages";
@@ -38,7 +39,15 @@ const Chat = ({ user }) => {
   const userId = user.uid;
   const room = useRoom(roomID, userId);
   const messages = useChatMessages(roomID);
-  console.log(room);
+  const messagesContainerRef = useRef(null);
+
+  useEffect(() => {
+    // Scroll to the bottom of messages when the component initially loads
+    if (messagesContainerRef.current) {
+      messagesContainerRef.current.scrollTop =
+        messagesContainerRef.current.scrollHeight;
+    }
+  }, [roomID]);
 
   async function sendMessage(event) {
     event.preventDefault();
@@ -76,7 +85,7 @@ const Chat = ({ user }) => {
   if (!room) return null;
 
   return (
-    <div>
+    <div className="flex flex-col h-screen w-screen">
       <div className="flex  p-2 items-center border-b-2 w-screen">
         <div className="avatar-container">
           <Avatar src={room.photoURL} alt={room.name} />
@@ -95,10 +104,8 @@ const Chat = ({ user }) => {
         </Dropdown>
       </div>
 
-      <div className="">
-        <div className="">
-          <ChatMessages messages={messages} user={user} roomId={roomID} />
-        </div>
+      <div className=" flex-1 overflow-y-auto" ref={messagesContainerRef}>
+        <ChatMessages messages={messages} user={user} roomId={roomID} />
       </div>
 
       <ChatFooter
