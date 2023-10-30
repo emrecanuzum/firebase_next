@@ -131,7 +131,7 @@ const Sidebar = ({ user }) => {
       </div>
 
       <Dialog open={isCreatingRoom} onClose={() => setCreatigRoom(false)}>
-        <DialogTitle>Subscribe</DialogTitle>
+        <DialogTitle>CREATE ROOM</DialogTitle>
         <DialogContent>
           <DialogContentText>
             Type the name of your public room.

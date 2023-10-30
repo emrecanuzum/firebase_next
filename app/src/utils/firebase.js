@@ -7,13 +7,23 @@ import { getStorage } from "firebase/storage";
 // https://firebase.google.com/docs/web/setup#available-libraries
 
 // Your web app's Firebase configuration
+
+// const firebaseConfig = {
+//   apiKey: "AIzaSyCJ7O6kNTAxFHIaIRTUPZMVrA_Ogkl30PY",
+//   authDomain: "fir-next-chat-349a1.firebaseapp.com",
+//   projectId: "fir-next-chat-349a1",
+//   storageBucket: "fir-next-chat-349a1.appspot.com",
+//   messagingSenderId: "17504100884",
+//   appId: "1:17504100884:web:6e021edef74678fb99bd01",
+// };
+
 const firebaseConfig = {
-  apiKey: "AIzaSyCJ7O6kNTAxFHIaIRTUPZMVrA_Ogkl30PY",
-  authDomain: "fir-next-chat-349a1.firebaseapp.com",
-  projectId: "fir-next-chat-349a1",
-  storageBucket: "fir-next-chat-349a1.appspot.com",
-  messagingSenderId: "17504100884",
-  appId: "1:17504100884:web:6e021edef74678fb99bd01",
+  apiKey: "AIzaSyCLvVgzGXc2G6BDi3BDiPvX0KCwyzmzxVQ",
+  authDomain: "fir-chat-unirexcity.firebaseapp.com",
+  projectId: "fir-chat-unirexcity",
+  storageBucket: "fir-chat-unirexcity.appspot.com",
+  messagingSenderId: "413436458604",
+  appId: "1:413436458604:web:51bd7276180611afc00a49",
 };
 
 // Initialize Firebase
