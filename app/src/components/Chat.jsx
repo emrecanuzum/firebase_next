@@ -8,7 +8,6 @@ import { useState } from "react";
 
 import useChatMessages from "../hooks/useChatMessages";
 import useRoom from "../hooks/useRoom";
-import useUsers from "../hooks/useUsers";
 import {
   Avatar,
   Dropdown,
@@ -17,7 +16,6 @@ import {
   DropdownTrigger,
 } from "@nextui-org/react";
 import { Menu, MenuBook } from "@mui/icons-material";
-import { send } from "process";
 import {
   addDoc,
   collection,
@@ -32,7 +30,6 @@ import { db } from "../utils/firebase";
 
 const Chat = ({ user }) => {
   const searchParams = useSearchParams();
-  const router = useRouter();
   const [input, setInput] = useState("");
   const roomID = searchParams.get("roomId") || "";
   //const roomId = router.query.roomId || "";
@@ -85,8 +82,8 @@ const Chat = ({ user }) => {
   if (!room) return null;
 
   return (
-    <div className="flex flex-col h-screen w-screen">
-      <div className="flex  p-2 items-center border-b-2 w-screen">
+    <div className="flex flex-col h-screen w-[100%]">
+      <div className="flex  p-2 items-center border-b-2">
         <div className="avatar-container">
           <Avatar src={room.photoURL} alt={room.name} />
         </div>

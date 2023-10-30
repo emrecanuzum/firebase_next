@@ -67,7 +67,7 @@ const Sidebar = ({ user }) => {
   }
 
   return (
-    <main className="sidebar">
+    <main className="sidebar overflow-auto h-screen">
       {/* Header */}
       <div className="addRoom absolute bottom-5 left-5">
         <Button
@@ -97,9 +97,10 @@ const Sidebar = ({ user }) => {
           </div>
         </div>
 
-        <div className="flex justify-between p-4 border-b-2">
+        <div className="grid grid-cols-3 p-4 border-b-2">
           {tabs.map((tab) => (
             <Button
+              className="mx-1"
               key={""}
               onClick={() => setMenu(tab.id)}
               isActive={tab.id === menu}
